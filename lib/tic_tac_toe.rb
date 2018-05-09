@@ -1,5 +1,6 @@
 class TicTacToe
   
+<<<<<<< HEAD
  
     def initialize(board = Array.new(9, " ") ) 
       @board = board
@@ -11,6 +12,21 @@ class TicTacToe
       puts " #{board[3]} | #{board[4]} | #{board[5]} "
       puts "-----------"
       puts " #{board[6]} | #{board[7]} | #{board[8]} "
+=======
+
+ 
+    def initialize(board = Array.new(9, " ")) 
+      @board = board
+    end
+    
+    
+    def display_board
+      puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
+      puts "-----------"
+      puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
+      puts "-----------"
+      puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
+>>>>>>> 0958707232a58c6834e981e1d90ddb400fae4dd5
     end
  
     WIN_COMBINATIONS = [
@@ -30,11 +46,16 @@ class TicTacToe
   end
 
 
+<<<<<<< HEAD
   def move(index, token)
+=======
+  def move(index, token = "X")
+>>>>>>> 0958707232a58c6834e981e1d90ddb400fae4dd5
     @board[index] = token
   end
 
 
+<<<<<<< HEAD
   def position_taken?(board = @board, index)
   !(board[index].nil? || board[index] == " ")
   end
@@ -108,5 +129,22 @@ end
       puts "Cat's Game!"
     end
   end
+=======
+  def position_taken?(index, board = @board)
+  !(board[index].nil? || board[index] == " ")
+  end
+
+
+  def valid_move?(index, board = @board)
+    index.between?(0, 8) && !position_taken?(board, index)
+  end
+
+  def turn_count
+    @board.count {|position| position != " " || ""}
+    
+  end
+
+
+>>>>>>> 0958707232a58c6834e981e1d90ddb400fae4dd5
 
 end
